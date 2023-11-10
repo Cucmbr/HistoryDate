@@ -1,6 +1,7 @@
 ﻿namespace HistoryDate.Domain
 {
-    internal class Year
+    internal abstract class HistoryDate
     {
+
     }
 }
