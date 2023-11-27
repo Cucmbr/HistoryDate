@@ -26,9 +26,10 @@ public enum CenturyPart
     NotDefined
 }
 
-public class Century : HistoryDate
+public class Century : HistoryDate, IAnnoDomini
 {
     public int Value { get; set; }
+    public bool AD { get; set; } = true;
     public CenturyPart Part { get; set; } = CenturyPart.NotDefined;
 
     public Century()
