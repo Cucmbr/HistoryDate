@@ -71,7 +71,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
     public override string ToString()
     {
         if (AD)
-            return $"{(Day == 0 ? "" : Day + ".")} {(Month == }.{Year}";
+            return $"{(Day == 0 ? "" : Day + ".")} {(Month == 0 ? "" : Month + ".")} {(Year == 0 ? "" : Year + ".")}";
         else
             return "Not implemented.";
     }
