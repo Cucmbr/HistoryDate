@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nX+6jS2cbjC5lpxcfZArLBU8cSZ7lJJxnFLISZT2JJ8/QPk2gBKSsC9icCpQbtq0h1rzXhevWWIz4hqAE0cRqA==",
+  "dgSpecHash": "tBKkZ/xBH1LrzqUlSX9AOZa/NmDI0b+88kVaPm9H94bv5ylhZ6ZsmhJBRN44DLcC6ko9nBLSw76IEYat8Bd/QA==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj",
+  "projectFilePath": "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

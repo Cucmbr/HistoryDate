@@ -3,10 +3,10 @@
 public class YearMonthDay : HistoryDate, IAnnoDomini
 {
     public long Year { get; set; }
-    public int? Month { get; set; }
-    public int? Day { get; set; }
+    public int Month { get; set; }
+    public int Day { get; set; }
     public bool AD { get; set; } = true;
-
+    
     public YearMonthDay()
     {
         if (JsonFormat != string.Empty)
@@ -35,20 +35,31 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
 
     public override void CalcInterval()
     {
-        if (Month != null && Day != null)
+        if (Year == 0 && (Month == 0 && Day != 0))
         {
-            Begin = new Date { Year = Year, Month = (int)Month, Day = (int)Day };
-            End = new Date { Year = Year, Month = (int)Month, Day = (int)Day };
-            if (!AD)
-            {
-                Begin.AD = false;
-                End.AD = false;
-            }
-            //через шаблоны (сопоставление с образцом)
+            throw new Exception("Year is zero or day has no month. Error!");
         }
-        else if()
+        else if(AD)
         {
-
+            if (Day != 0 && Month != 0)
+            {
+                Begin = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
+                End = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
+            }
+            else if(Month != 0)
+            {
+                Begin = new Date { Year = Year, Month = Month, Day = 1, AD = AD };
+                End = new Date { Year = Year, Month = Month, Day = DateTime.DaysInMonth((int)Year, Month), AD = AD };
+            }
+            else
+            {
+                Begin = new Date { Year = Year, Month = 1, Day = 1, AD = AD };
+                Begin = new Date { Year = Year, Month = 12, Day = 31, AD = AD };
+            }
+        }
+        else if(!AD)
+        {
+            // проконсультроваться с Пал Санычем!
         }
     }
 
@@ -59,7 +70,9 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
 
     public override string ToString()
     {
-
-        return "";
+        if (AD)
+            return $"{(Day == 0 ? "" : Day + ".")} {(Month == }.{Year}";
+        else
+            return "Not implemented.";
     }
 }

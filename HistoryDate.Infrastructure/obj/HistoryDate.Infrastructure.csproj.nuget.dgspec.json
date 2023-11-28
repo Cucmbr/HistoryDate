@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\HistoryDate\\HistoryDate.Infrastructure\\HistoryDate.Infrastructure.csproj": {}
+    "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Infrastructure\\HistoryDate.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj": {
+    "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj",
+        "projectUniqueName": "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj",
         "projectName": "HistoryDate.Domain",
-        "projectPath": "C:\\Projects\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj",
-        "packagesPath": "C:\\Users\\vanva\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\HistoryDate\\HistoryDate.Domain\\obj\\",
+        "projectPath": "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vanva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -64,20 +64,20 @@
         }
       }
     },
-    "C:\\Projects\\HistoryDate\\HistoryDate.Infrastructure\\HistoryDate.Infrastructure.csproj": {
+    "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Infrastructure\\HistoryDate.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\HistoryDate\\HistoryDate.Infrastructure\\HistoryDate.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Infrastructure\\HistoryDate.Infrastructure.csproj",
         "projectName": "HistoryDate.Infrastructure",
-        "projectPath": "C:\\Projects\\HistoryDate\\HistoryDate.Infrastructure\\HistoryDate.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\vanva\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\HistoryDate\\HistoryDate.Infrastructure\\obj\\",
+        "projectPath": "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Infrastructure\\HistoryDate.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vanva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -93,8 +93,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Projects\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj": {
-                "projectPath": "C:\\Projects\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj"
+              "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj": {
+                "projectPath": "D:\\Documents\\GitHub\\HistoryDate\\HistoryDate.Domain\\HistoryDate.Domain.csproj"
               }
             }
           }

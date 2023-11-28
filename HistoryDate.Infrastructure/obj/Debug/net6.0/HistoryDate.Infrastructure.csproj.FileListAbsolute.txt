@@ -1,0 +1,17 @@
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\HistoryDate.Infrastructure.csproj.AssemblyReference.cache
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\HistoryDate.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\HistoryDate.Infrastructure.AssemblyInfoInputs.cache
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\HistoryDate.Infrastructure.AssemblyInfo.cs
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\HistoryDate.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\bin\Debug\net6.0\HistoryDate.Infrastructure.deps.json
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\bin\Debug\net6.0\HistoryDate.Infrastructure.runtimeconfig.json
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\bin\Debug\net6.0\HistoryDate.Infrastructure.dll
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\bin\Debug\net6.0\HistoryDate.Infrastructure.pdb
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\bin\Debug\net6.0\HistoryDate.Domain.dll
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\bin\Debug\net6.0\HistoryDate.Domain.pdb
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\HistoryDate.Infrastructure.csproj.CopyComplete
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\HistoryDate.Infrastructure.dll
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\refint\HistoryDate.Infrastructure.dll
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\HistoryDate.Infrastructure.pdb
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\HistoryDate.Infrastructure.genruntimeconfig.cache
+D:\Documents\GitHub\HistoryDate\HistoryDate.Infrastructure\obj\Debug\net6.0\ref\HistoryDate.Infrastructure.dll
