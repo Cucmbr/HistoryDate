@@ -40,9 +40,25 @@ public class Century : HistoryDate, IAnnoDomini
         }
     }
 
+    public Century(int val)
+    {
+        Value = val;
+    }
+
+    public Century(int val, CenturyPart part)
+    {
+        Value = val;
+        Part = part;
+    }
+
     public override void CalcInterval()
     {
-        //calculate interval
+        if (Value != 0)
+        {
+            Begin = new Date() { Year = Value * 100 - 99, Month = 1, Day = 1, AD = AD };
+            End = new Date() { Year = Value * 100, Month = 12, Day = 31, AD = AD };
+        } // скорее всего не работает с датами до нашей эры!
+
     }
 
     public override void FromJson()
