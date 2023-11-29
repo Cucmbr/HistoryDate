@@ -4,7 +4,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
 {
     public long Year { get; set; }
     public int Month { get; set; }
-    public int Day { get; set; }
+    public int Day { get; set; } // нужно реализовать проверку на правильность даты. Например, если количество дней больше 31, то неправильная дата, аналогично с месяцами.
     public bool AD { get; set; } = true;
     
     public YearMonthDay() 
