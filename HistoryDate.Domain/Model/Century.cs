@@ -40,7 +40,7 @@ public class Century : HistoryDate, IAnnoDomini
         }
     }
 
-    public Century(int val)
+    public Century(int val) // нет способа определения AD
     {
         Value = val;
     }
@@ -57,16 +57,11 @@ public class Century : HistoryDate, IAnnoDomini
         {
             Begin = new Date() { Year = Value * 100 - 99, Month = 1, Day = 1, AD = AD };
             End = new Date() { Year = Value * 100, Month = 12, Day = 31, AD = AD };
-        } // скорее всего не работает с датами до нашей эры!
+        } // скорее всего не работает с датами до нашей эры! нужно добавить интервалы с учётом centurypart!
 
     }
 
     public override void FromJson()
-    {
-
-    }
-
-    public override void ToJson()
     {
 
     }

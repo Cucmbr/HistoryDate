@@ -7,7 +7,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
     public int Day { get; set; }
     public bool AD { get; set; } = true;
     
-    public YearMonthDay()
+    public YearMonthDay() 
     {
         if (JsonFormat != string.Empty)
         {
@@ -15,7 +15,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         }
     }
 
-    public YearMonthDay(long year, int month, int day)
+    public YearMonthDay(long year, int month, int day)  // нет способа определения AD
     {
         Year = year;
         Month = month;
@@ -33,7 +33,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         Year = year;
     }
 
-    public override void CalcInterval()
+    public override void CalcInterval() // не доделан
     {
         if (Year == 0 && (Month == 0 && Day != 0))
         {
@@ -71,7 +71,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
     public override string ToString()
     {
         if (AD)
-            return $"{(Day == 0 ? "" : Day + ".")} {(Month == 0 ? "" : Month + ".")} {(Year == 0 ? "" : Year + ".")}";
+            return $"{(Day == 0 ? "" : Day + ".")} {(Month == 0 ? "" : Month + ".")} {(Year == 0 ? "" : Year + ".")}"; // решение-затычка, не универсально
         else
             return "Not implemented.";
     }
