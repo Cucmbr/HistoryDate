@@ -54,7 +54,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
             else
             {
                 Begin = new Date { Year = Year, Month = 1, Day = 1, AD = AD };
-                Begin = new Date { Year = Year, Month = 12, Day = 31, AD = AD };
+                End = new Date { Year = Year, Month = 12, Day = 31, AD = AD };
             }
         }
         else if(!AD)
