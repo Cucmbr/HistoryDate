@@ -11,7 +11,9 @@ namespace HistoryDate.Tests
         public void hasCalculatedOneYearIntervalCorrectly(long year)
         {
             var YMD = new YearMonthDay(year);
+            
             YMD.CalcInterval();
+            
             if (YMD.AD)
             {
                 Assert.Equal(year, YMD.Begin.Year);

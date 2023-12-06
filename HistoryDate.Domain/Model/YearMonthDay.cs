@@ -5,7 +5,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
     public long Year { get; set; }
     public int Month { get; set; }
     public int Day { get; set; } // нужно реализовать проверку на правильность даты. Например, если количество дней больше 31, то неправильная дата, аналогично с месяцами.
-    public bool AD { get; set; } = true;
+    public bool AD { get; set; }
     
     public YearMonthDay() 
     {
@@ -15,27 +15,30 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         }
     }
 
-    public YearMonthDay(long year, int month, int day)  // нет способа определения AD
+    public YearMonthDay(long year, int month, int day, bool AD = true)
     {
         Year = year;
         Month = month;
         Day = day;
+        this.AD = AD;
     }
 
-    public YearMonthDay(long year, int month)
+    public YearMonthDay(long year, int month, bool AD = true)
     {
         Year = year;
         Month = month;
+        this.AD = AD;
     }
 
-    public YearMonthDay(long year)
+    public YearMonthDay(long year, bool AD = true)
     {
         Year = year;
+        this.AD = AD;
     }
 
     public override void CalcInterval() // не доделан
     {
-        if (Year == 0 && (Month == 0 && Day != 0))
+        if (Year == 0 || (Month == 0 && Day != 0))
         {
             throw new Exception("Year is zero or day has no month. Error!");
         }
@@ -59,7 +62,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         }
         else if(!AD)
         {
-            // проконсультроваться с Пал Санычем!
+            
         }
     }
 
