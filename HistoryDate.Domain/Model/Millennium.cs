@@ -15,9 +15,10 @@ public class Millennium : HistoryDate, IAnnoDomini
         }
     }
 
-    public Millennium(int val) // нет способа определения AD
+    public Millennium(int val ) // нет способа определения AD
     {
         Value = val;
+       
     }
 
     public override void CalcInterval()
