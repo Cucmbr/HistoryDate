@@ -1,4 +1,6 @@
-﻿namespace HistoryDate.Domain.Model;
+﻿using System.Text.Json;
+
+namespace HistoryDate.Domain.Model;
 
 public enum DateApproximation
 { 
@@ -28,6 +30,6 @@ public abstract class HistoryDate
 
     public virtual void ToJson()
     {
-
+        JsonFormat = JsonSerializer.Serialize(this);
     }
 }

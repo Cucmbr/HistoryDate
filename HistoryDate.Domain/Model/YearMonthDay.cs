@@ -3,7 +3,7 @@
 public class YearMonthDay : HistoryDate, IAnnoDomini
 {
     public long Year { get; set; }
-    public int Month { get; set; }
+    public int Month { get; set; } //в этом и других классах нет возможности задавать presumably и approximation
     public int Day { get; set; } // нужно реализовать проверку на правильность даты. Например, если количество дней больше 31, то неправильная дата, аналогично с месяцами.
     public bool AD { get; set; }
     
@@ -13,6 +13,8 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         {
             FromJson();
         }
+
+        CalcInterval();
     }
 
     public YearMonthDay(long year, int month, int day, bool AD = true)
@@ -21,6 +23,8 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         Month = month;
         Day = day;
         this.AD = AD;
+
+        CalcInterval();
     }
 
     public YearMonthDay(long year, int month, bool AD = true)
@@ -28,12 +32,16 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         Year = year;
         Month = month;
         this.AD = AD;
+
+        CalcInterval();
     }
 
     public YearMonthDay(long year, bool AD = true)
     {
         Year = year;
         this.AD = AD;
+
+        CalcInterval();
     }
 
     public override void CalcInterval() // не доделан
