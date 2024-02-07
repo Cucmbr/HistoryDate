@@ -36,44 +36,49 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         this.AD = AD;
     }
 
-    public override void CalcInterval() // не доделан  // саша чето сделала,
-                                        // но невыкупает, где вычисляется интервал и как сделать отдельное вычисления для дат д.н.э
+    public void CheckDate()
     {
-       
         if (Year == 0 || (Month == 0 && Day != 0))
         {
             throw new Exception("Year is zero or day has no month. Error!");
         }
-        else if(AD)
+    
+        if (Month > 12 || Month < 0)
         {
-            if (Month > 12 || Month < 0 )
-            {
                 throw new Exception("Month > 12 or Month value is negative. Error!");
-            }
-            else if (Day > 31 || Day < 0)
-            {
-                throw new Exception("Day > 31 or Day value is negative. Error!");
-            }
-            else {
-                if (Day != 0 && Month != 0)
-                {
-                    Begin = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
-                    End = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
-                }
-                else if (Month != 0)
-                {
-                    Begin = new Date { Year = Year, Month = Month, Day = 1, AD = AD };
-                    End = new Date { Year = Year, Month = Month, Day = DateTime.DaysInMonth((int)Year, Month), AD = AD };
-                }
-                else
-                {
-                    Begin = new Date { Year = Year, Month = 1, Day = 1, AD = AD };
-                    End = new Date { Year = Year, Month = 12, Day = 31, AD = AD };
-                }
-            }
-           
         }
-        else if(!AD) // вот тут ужас сделала
+        else if (Day > 31 || Day < 0)
+        {
+                throw new Exception("Day > 31 or Day value is negative. Error!");
+        }
+
+     
+    }
+
+    public override void CalcInterval() // не доделан  // саша чето сделала,
+                                        // но невыкупает, где вычисляется интервал и как сделать отдельное вычисления для дат д.н.э
+    {
+       if (AD)
+        {
+            if (Day != 0 && Month != 0)
+            {
+                Begin = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
+                End = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
+            }
+            else if (Month != 0)
+            {
+                Begin = new Date { Year = Year, Month = Month, Day = 1, AD = AD };
+                End = new Date { Year = Year, Month = Month, Day = DateTime.DaysInMonth((int)Year, Month), AD = AD };
+            }
+            else
+            {
+                Begin = new Date { Year = Year, Month = 1, Day = 1, AD = AD };
+                End = new Date { Year = Year, Month = 12, Day = 31, AD = AD };
+            }
+
+        }
+       else
+        if (!AD) // вот тут ужас сделала
         {
             if (Day != 0 && Month != 0)
             {
