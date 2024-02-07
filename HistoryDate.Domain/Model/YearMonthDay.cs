@@ -1,11 +1,13 @@
-﻿namespace HistoryDate.Domain.Model;
+﻿using System.Net.Http.Headers;
+
+namespace HistoryDate.Domain.Model;
 
 public class YearMonthDay : HistoryDate, IAnnoDomini
 {
     public long Year { get; set; }
     public int Month { get; set; }
-    public int Day { get; set; } // нужно реализовать проверку на правильность даты. Например, если количество дней больше 31, то неправильная дата, аналогично с месяцами.
-    public bool AD { get; set; }
+    public int Day { get; set; }
+    public bool AD { get; set; } = true;
     
     public YearMonthDay() 
     {
@@ -36,29 +38,56 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         this.AD = AD;
     }
 
-    public void CheckDate()
+    public bool IsValidDate()
     {
         if (Year == 0 || (Month == 0 && Day != 0))
         {
-            throw new Exception("Year is zero or day has no month. Error!");
+            return false;
         }
-    
-        if (Month > 12 || Month < 0)
+        else if (Month > 12 || Month < 0)
         {
-                throw new Exception("Month > 12 or Month value is negative. Error!");
+            return false;
         }
         else if (Day > 31 || Day < 0)
         {
-                throw new Exception("Day > 31 or Day value is negative. Error!");
+            return false;
         }
 
-     
+        if (Month == 1 || Month == 3 || Month == 5 || Month == 7 || Month == 8 || Month == 10 || Month == 12)
+        { 
+            if (Day > 31)
+                return false;
+        }
+        else if (Month == 2)
+        {
+            if (Year % 400 == 0 || (Year % 4 == 0 && Year % 100 != 0))
+            {
+                if (Day > 29)
+                    return false;
+            }
+            else
+            {
+                if (Day > 28)
+                    return false;
+            }
+        }
+        else
+        {
+            if (Day > 30)
+                return false;
+        }
+
+        return true;
     }
 
-    public override void CalcInterval() // не доделан  // саша чето сделала,
-                                        // но невыкупает, где вычисляется интервал и как сделать отдельное вычисления для дат д.н.э
+    public override void CalcInterval()
     {
-       if (AD)
+        if (!IsValidDate())
+        { 
+            throw new InvalidDataException("Invalid YMD Date");
+        }
+
+        if (AD)
         {
             if (Day != 0 && Month != 0)
             {
@@ -77,25 +106,10 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
             }
 
         }
-       else
-        if (!AD) // вот тут ужас сделала
+        else
         {
-            if (Day != 0 && Month != 0)
-            {
-                Begin = new Date { Year = Year, Month = Month, Day = Day, AD = false };
-                End = new Date { Year = Year, Month = Month, Day = Day, AD = false };
-            }
-            else if (Month != 0)
-            {
-                Begin = new Date { Year = Year, Month = Month, Day = DateTime.DaysInMonth((int)Year, Month), AD = false };
-                End = new Date { Year = Year, Month = Month, Day = Day = 1, AD = false };
-            }
-            else
-            {
-                Begin = new Date { Year = Year, Month = 12, Day = 31, AD = false };
-                End = new Date { Year = Year, Month = 1, Day = 1, AD = false };
-            }
-
+            Begin = new Date { Year = Year, Month = 1, Day = 1, AD = false };
+            End = new Date { Year = Year, Month = 12, Day = 31, AD = false };
         }
     }
 
@@ -107,8 +121,8 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
     public override string ToString()
     {
         if (AD)
-            return $"{(Day == 0 ? "" : Day + ".")} {(Month == 0 ? "" : Month + ".")} {(Year == 0 ? "" : Year + ".")}"; // решение-затычка, не универсально
+            return $"{(Day == 0 ? "" : Day + ".")} {(Month == 0 ? "" : Month + ".")} {(Year == 0 ? "" : Year + ".")}";
         else
-            return "Not implemented.";
+            return $"{Year} г. до н. э.";
     }
 }
