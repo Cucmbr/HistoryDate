@@ -41,11 +41,15 @@ public class Century : HistoryDate, IAnnoDomini
         Value = val;
     }
 
-    public Century(int val, CenturyPart part)
+    public Century(int val, CenturyPart part, bool AD = true)
     {
         Value = val;
         Part = part;
+        this.AD = AD;
+
     }
+
+
 
     public override void CalcInterval()
     {
