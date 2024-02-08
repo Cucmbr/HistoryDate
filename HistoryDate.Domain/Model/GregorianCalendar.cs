@@ -2,14 +2,14 @@
 
 namespace HistoryDate.Domain.Model;
 
-public class YearMonthDay : HistoryDate, IAnnoDomini
+public class GregorianCalendar : HistoryDate, IAnnoDomini
 {
     public long Year { get; set; }
     public int Month { get; set; }
     public int Day { get; set; }
     public bool AD { get; set; } = true;
     
-    public YearMonthDay() 
+    public GregorianCalendar() 
     {
         if (JsonFormat != string.Empty)
         {
@@ -17,7 +17,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         }
     }
 
-    public YearMonthDay(long year, int month, int day, bool AD = true)
+    public GregorianCalendar(long year, int month, int day, bool AD = true)
     {
         Year = year;
         Month = month;
@@ -27,7 +27,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         CalcInterval();
     }
 
-    public YearMonthDay(long year, int month, bool AD = true)
+    public GregorianCalendar(long year, int month, bool AD = true)
     {
         Year = year;
         Month = month;
@@ -36,7 +36,7 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         CalcInterval();
     }
 
-    public YearMonthDay(long year, bool AD = true)
+    public GregorianCalendar(long year, bool AD = true)
     {
         Year = year;
         this.AD = AD;

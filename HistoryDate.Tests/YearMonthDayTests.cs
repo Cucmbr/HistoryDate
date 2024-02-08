@@ -10,7 +10,7 @@ namespace HistoryDate.Tests
         [InlineData (2025)]
         public void hasCalculatedOneYearIntervalCorrectly(long year)
         {
-            var YMD = new YearMonthDay(year);
+            var YMD = new GregorianCalendar(year);
             
             YMD.CalcInterval();
             

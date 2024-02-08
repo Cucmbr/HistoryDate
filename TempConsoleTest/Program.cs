@@ -1,11 +1,11 @@
 ﻿using HistoryDate.Domain.Model;
 using System.Text.Json;
 
-var ymd = new YearMonthDay(2004);
+var ymd = new GregorianCalendar(2004);
 ymd.ToJson();
 string ymdSer = ymd.JsonFormat;
 
-var ymd2 = JsonSerializer.Deserialize<YearMonthDay>(ymd.JsonFormat);
+var ymd2 = JsonSerializer.Deserialize<GregorianCalendar>(ymd.JsonFormat);
 
 Console.WriteLine(ymdSer);
 
