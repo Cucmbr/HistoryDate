@@ -2,28 +2,26 @@
 
 public enum CenturyPart
 {
-    Begin,
-    End,
-    FirstHalf,
-    LastHalf,
-    FirstThird,
-    SecondThird,
-    LastThird,
-    FirstQuarter,
-    SecondQuarter,
-    ThirdQuarter,
-    LastQuarter,
-    FirstDecade,
-    SecondDecade,
-    ThirdDecade,
-    FourthDecade,
-    FifthDecade,
-    SixthDecade,
-    SeventhDecade,
-    EighthDecade,
-    NinethDecade,
-    LastDeacde,
-    NotDefined
+    FirstHalf = 2,
+    LastHalf = 12,
+    FirstThird = 3,
+    SecondThird = 13,
+    LastThird = 23,
+    FirstQuarter = 4,
+    SecondQuarter = 14,
+    ThirdQuarter = 24,
+    LastQuarter = 34,
+    FirstDecade = 10,
+    SecondDecade = 110,
+    ThirdDecade = 210,
+    FourthDecade = 310,
+    FifthDecade = 410,
+    SixthDecade = 510,
+    SeventhDecade = 610,
+    EighthDecade = 710,
+    NinethDecade = 810,
+    LastDeacde = 910,
+    NotDefined = 1
 }
 
 public class Century : HistoryDate, IAnnoDomini
@@ -41,19 +39,41 @@ public class Century : HistoryDate, IAnnoDomini
         Value = val;
     }
 
-    public Century(int val, CenturyPart part)
+    public Century(int val, CenturyPart part, bool AD = true)
     {
         Value = val;
         Part = part;
+        this.AD = AD;
+    }
+
+    private int[] MNCalculator()
+    {
+        int partCode = (int)Part;
+        if (partCode % 10 == 0)
+        {
+            return [partCode / 100, 10];
+        }
+        else if (partCode < 10)
+        {
+            return [0, partCode];
+        }
+        else
+        {
+            return [partCode / 10, partCode % 10];
+        }
     }
 
     public override void CalcInterval()
     {
-        if (Value != 0)
-        {
-            Begin = new Date() { Year = Value * 100 - 99, Month = 1, Day = 1, AD = AD };
-            End = new Date() { Year = Value * 100, Month = 12, Day = 31, AD = AD };
-        } //нужно добавить интервалы с учётом centurypart!
+        int centuryUtility = (Value - 1) * 100 + 1;
 
+        if (Value == 0)
+        {
+            throw new InvalidDataException("Invalid century value");
+        }
+
+        int[] mn = MNCalculator();
+        Begin = new Date { Year = centuryUtility + (100 * mn[0] / mn[1]), Month = 1, Day = 1, AD = AD };
+        End = new Date { Year = (centuryUtility  + (100 * (mn[0] + 1)) / mn[1] ) - 1, Month = 12, Day = 31, AD = AD };
     }
 }
