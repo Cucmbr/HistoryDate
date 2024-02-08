@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDate.Domain", "Histo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDate.Infrastructure", "HistoryDate.Infrastructure\HistoryDate.Infrastructure.csproj", "{F36C0711-B926-4DD3-AD5C-039AB75FCBD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryDate.Tests", "HistoryDate.Tests\HistoryDate.Tests.csproj", "{93AC581F-ACA1-4971-803C-32E12FFD7D1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDate.Tests", "HistoryDate.Tests\HistoryDate.Tests.csproj", "{93AC581F-ACA1-4971-803C-32E12FFD7D1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConsoleTest", "TempConsoleTest\TempConsoleTest.csproj", "{80798D94-906C-449F-A1C6-8E8CEA4FCE07}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3F3FA7D8-3557-4218-87F0-588114D07E89} = {3F3FA7D8-3557-4218-87F0-588114D07E89}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{93AC581F-ACA1-4971-803C-32E12FFD7D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93AC581F-ACA1-4971-803C-32E12FFD7D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93AC581F-ACA1-4971-803C-32E12FFD7D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80798D94-906C-449F-A1C6-8E8CEA4FCE07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80798D94-906C-449F-A1C6-8E8CEA4FCE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80798D94-906C-449F-A1C6-8E8CEA4FCE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80798D94-906C-449F-A1C6-8E8CEA4FCE07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

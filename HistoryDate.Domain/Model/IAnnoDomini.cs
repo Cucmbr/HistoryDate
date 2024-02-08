@@ -3,5 +3,4 @@
 public interface IAnnoDomini
 {
     bool AD { get; set; }
-  
 }

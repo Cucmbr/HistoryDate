@@ -23,6 +23,8 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         Month = month;
         Day = day;
         this.AD = AD;
+
+        CalcInterval();
     }
 
     public YearMonthDay(long year, int month, bool AD = true)
@@ -30,12 +32,16 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         Year = year;
         Month = month;
         this.AD = AD;
+
+        CalcInterval();
     }
 
     public YearMonthDay(long year, bool AD = true)
     {
         Year = year;
         this.AD = AD;
+
+        CalcInterval();
     }
 
     public bool IsValidDate()
