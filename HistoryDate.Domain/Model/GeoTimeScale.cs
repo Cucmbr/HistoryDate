@@ -76,8 +76,4 @@ public class GeoTimeScale : HistoryDate
     {
         throw new NotImplementedException();
     }
-    public override void FromJson()
-    {
-        throw new NotImplementedException();
-    }
 }

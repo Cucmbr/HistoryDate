@@ -2,12 +2,10 @@
 using System.Text.Json;
 
 var ymd = new GregorianCalendar(2004);
-ymd.ToJson();
-string ymdSer = ymd.JsonFormat;
 
-var ymd2 = JsonSerializer.Deserialize<GregorianCalendar>(ymd.JsonFormat);
+var ymd2 = JsonSerializer.Deserialize<GregorianCalendar>(ymd.ToJson());
 
-Console.WriteLine(ymdSer);
+Console.WriteLine(ymd.ToJson());
 
 Console.WriteLine("----------------------------------------------------------------------------------");
 

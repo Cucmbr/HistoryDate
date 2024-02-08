@@ -9,10 +9,6 @@ public class Millennium : HistoryDate, IAnnoDomini
 
     public Millennium()
     {
-        if (JsonFormat != string.Empty)
-        {
-            FromJson();
-        }
     }
 
     public Millennium(int val ) // нет способа определения AD
@@ -28,10 +24,5 @@ public class Millennium : HistoryDate, IAnnoDomini
             Begin = new Date() { Year = Value * 1000 - 999, Month = 1, Day = 1, AD = AD };
             End = new Date() { Year = Value * 1000, Month = 12, Day = 31, AD = AD };
         } // скорее всего не работает с датами до нашей эры!
-    }
-
-    public override void FromJson()
-    {
-
     }
 }

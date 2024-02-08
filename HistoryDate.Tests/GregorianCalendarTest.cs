@@ -2,7 +2,7 @@ using HistoryDate.Domain.Model;
 
 namespace HistoryDate.Tests
 {
-    public class YearMonthDayTests
+    public class GregorianCalendarTest
     {
         [Theory]
         [InlineData (1)]
