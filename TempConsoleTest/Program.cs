@@ -6,11 +6,9 @@ ymd.ToJson();
 string ymdSer = ymd.JsonFormat;
 
 var ymd2 = JsonSerializer.Deserialize<YearMonthDay>(ymd.JsonFormat);
-ymd2.ToJson();
-Console.WriteLine("---------------------------------");
-
-Console.WriteLine(ymd2.JsonFormat);
-
-
 
 Console.WriteLine(ymdSer);
+
+Console.WriteLine("----------------------------------------------------------------------------------");
+
+Console.WriteLine(JsonSerializer.Serialize(ymd2));

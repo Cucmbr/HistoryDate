@@ -13,8 +13,6 @@ public class YearMonthDay : HistoryDate, IAnnoDomini
         {
             FromJson();
         }
-
-        CalcInterval();
     }
 
     public YearMonthDay(long year, int month, int day, bool AD = true)
