@@ -63,6 +63,8 @@ public class Century : HistoryDate, IAnnoDomini
         }
     }
 
+
+
     public override void CalcInterval()
     {
         int centuryUtility = (Value - 1) * 100 + 1;
