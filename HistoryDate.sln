@@ -10,10 +10,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDateLib.Infrastructure", "HistoryDate.Infrastructure\HistoryDateLib.Infrastructure.csproj", "{F36C0711-B926-4DD3-AD5C-039AB75FCBD9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDateLib.Tests", "HistoryDate.Tests\HistoryDateLib.Tests.csproj", "{93AC581F-ACA1-4971-803C-32E12FFD7D1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F36C0711-B926-4DD3-AD5C-039AB75FCBD9} = {F36C0711-B926-4DD3-AD5C-039AB75FCBD9}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TempConsoleTest", "TempConsoleTest\TempConsoleTest.csproj", "{80798D94-906C-449F-A1C6-8E8CEA4FCE07}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3F3FA7D8-3557-4218-87F0-588114D07E89} = {3F3FA7D8-3557-4218-87F0-588114D07E89}
+		{F36C0711-B926-4DD3-AD5C-039AB75FCBD9} = {F36C0711-B926-4DD3-AD5C-039AB75FCBD9}
 	EndProjectSection
 EndProject
 Global

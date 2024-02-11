@@ -1,22 +1,17 @@
 ﻿using HistoryDateLib.Domain.Model;
-using System.Text.Json;
+using HistoryDateLib.Infrastructure;
+Century cent = new Century(19, CenturyPart.FirstHalf, true);
+GregorianCalendar greg = new GregorianCalendar(1000, 2, 10);
+GregorianCalendar greg2 = new GregorianCalendar(500, 3, 20);
+GregorianCalendar greg3 = new GregorianCalendar(2004, 4, 17);
+GregorianCalendar greg4 = new GregorianCalendar(2004, 3, 7);
 
-//int tempCentury = 101;
-//Century[] test = { new Century(tempCentury), new Century(tempCentury, CenturyPart.LastHalf), new Century(tempCentury, CenturyPart.NotDefined), new Century(tempCentury, CenturyPart.SixthDecade), new Century(tempCentury, CenturyPart.FirstQuarter), new Century(tempCentury, CenturyPart.FirstThird), new Century(tempCentury, CenturyPart.SecondThird), new Century(tempCentury, CenturyPart.LastThird) };
-//var test2 = new Century(15);
+Context context = new Context();
+context.Database.EnsureDeleted();
+context.Database.EnsureCreated();
 
-//foreach (var i in test)
-//{
-//    i.CalcInterval();
-//    Console.WriteLine(JsonSerializer.Serialize(i));
-//    Console.WriteLine("------------------------------");
-//}
+await context.HistoryDates.AddAsync(greg);
+await context.HistoryDates.AddAsync(greg2);
+await context.HistoryDates.AddAsync(greg3);
+await context.HistoryDates.AddAsync(greg4);
 
-var greg = new GregorianCalendar(2004, 04, 17);
-var cent = new Century(21, CenturyPart.FirstQuarter);
-
-greg.ToJson();
-cent.ToJson();
-
-Console.WriteLine(greg.JsonFormat);
-Console.WriteLine(nameof(greg));

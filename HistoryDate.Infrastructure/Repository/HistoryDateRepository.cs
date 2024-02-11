@@ -1,8 +1,7 @@
 ﻿using HistoryDateLib.Domain.Model;
-using HistoryDateLib.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace HistoryDateLib.Infrastructure.Repository;
+namespace HistoryDateLib.Infrastructure;
 
 public class HistoryDateRepository
 {

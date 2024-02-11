@@ -10,5 +10,8 @@
   <ItemGroup>
     <ProjectReference Include="..\HistoryDate.Domain\HistoryDateLib.Domain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HistoryDate.Infrastructure\HistoryDateLib.Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>
