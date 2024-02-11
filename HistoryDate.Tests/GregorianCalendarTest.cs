@@ -1,6 +1,6 @@
-using HistoryDate.Domain.Model;
+using HistoryDateLib.Domain.Model;
 
-namespace HistoryDate.Tests
+namespace HistoryDateLib.Tests
 {
     public class GregorianCalendarTest
     {
@@ -16,9 +16,9 @@ namespace HistoryDate.Tests
             
             if (YMD.AD)
             {
-                Assert.Equal(year, YMD.Begin.Year);
-                Assert.Equal(1, YMD.Begin.Day);
-                Assert.Equal(1, YMD.Begin.Month);
+                Assert.Equal(year, YMD.Begining.Year);
+                Assert.Equal(1, YMD.Begining.Day);
+                Assert.Equal(1, YMD.Begining.Month);
 
                 Assert.Equal(year, YMD.End.Year);
                 Assert.Equal(31, YMD.End.Day);

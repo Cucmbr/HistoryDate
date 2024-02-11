@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HistoryDate.Domain\HistoryDate.Domain.csproj" />
+    <ProjectReference Include="..\HistoryDate.Domain\HistoryDateLib.Domain.csproj" />
   </ItemGroup>
 
 </Project>

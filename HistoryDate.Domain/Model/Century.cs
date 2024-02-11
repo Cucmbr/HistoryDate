@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace HistoryDate.Domain.Model;
+namespace HistoryDateLib.Domain.Model;
 
 public enum CenturyPart
 {
@@ -65,11 +65,6 @@ public class Century : HistoryDate, IAnnoDomini
         }
     }
 
-    public override string ToJson()
-    {
-        return JsonSerializer.Serialize(this);
-    }
-
     public override void CalcInterval()
     {
         int centuryUtility = (Value - 1) * 100 + 1;
@@ -80,7 +75,17 @@ public class Century : HistoryDate, IAnnoDomini
         }
 
         int[] mn = MNCalculator();
-        Begin = new Date { Year = centuryUtility + (100 * mn[0] / mn[1]), Month = 1, Day = 1, AD = AD };
+        Begining = new Date { Year = centuryUtility + (100 * mn[0] / mn[1]), Month = 1, Day = 1, AD = AD };
         End = new Date { Year = (centuryUtility  + (100 * (mn[0] + 1)) / mn[1] ) - 1, Month = 12, Day = 31, AD = AD };
+    }
+
+    public override void ToJson()
+    {
+        JsonFormat = JsonSerializer.Serialize(this);
+    }
+
+    public override void FromJson()
+    {
+        throw new NotImplementedException();
     }
 }

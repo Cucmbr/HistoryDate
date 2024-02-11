@@ -1,4 +1,4 @@
-﻿namespace HistoryDate.Domain.Model;
+﻿namespace HistoryDateLib.Domain.Model;
 
 public class Date : IAnnoDomini
 {

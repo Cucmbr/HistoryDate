@@ -1,7 +1,6 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace HistoryDate.Domain.Model;
+namespace HistoryDateLib.Domain.Model;
 
 public enum DateApproximation
 { 
@@ -14,7 +13,10 @@ public enum DateApproximation
 public abstract class HistoryDate
 {
     [JsonIgnore]
-    public Date Begin { get; set; } = null!;
+    public Guid Id { get; set; }
+
+    [JsonIgnore]
+    public Date Begining { get; set; } = null!;
 
     [JsonIgnore]
     public Date End { get; set; } = null!;
@@ -24,7 +26,23 @@ public abstract class HistoryDate
 
     [JsonIgnore]
     public bool Presumably { get; set; } = false;
+     
+    [JsonIgnore]
+    public string JsonFormat { get; set; } = string.Empty;
+
+    public HistoryDate() { }
+
+    public HistoryDate(string json)
+    {
+        JsonFormat = json;
+
+        if (JsonFormat != string.Empty)
+        {
+            FromJson();
+        }
+    }
 
     public abstract void CalcInterval();
-    public abstract string ToJson();
+    public abstract void ToJson();
+    public abstract void FromJson();
 }

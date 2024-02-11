@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace HistoryDate.Domain.Model;
+namespace HistoryDateLib.Domain.Model;
 
 public class GregorianCalendar : HistoryDate, IAnnoDomini
 {
@@ -90,31 +90,39 @@ public class GregorianCalendar : HistoryDate, IAnnoDomini
         {
             if (Day != 0 && Month != 0)
             {
-                Begin = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
+                Begining = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
                 End = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
             }
             else if (Month != 0)
             {
-                Begin = new Date { Year = Year, Month = Month, Day = 1, AD = AD };
+                Begining = new Date { Year = Year, Month = Month, Day = 1, AD = AD };
                 End = new Date { Year = Year, Month = Month, Day = DateTime.DaysInMonth((int)Year, Month), AD = AD };
             }
             else
             {
-                Begin = new Date { Year = Year, Month = 1, Day = 1, AD = AD };
+                Begining = new Date { Year = Year, Month = 1, Day = 1, AD = AD };
                 End = new Date { Year = Year, Month = 12, Day = 31, AD = AD };
             }
 
         }
         else
         {
-            Begin = new Date { Year = Year, Month = 1, Day = 1, AD = false };
+            Begining = new Date { Year = Year, Month = 1, Day = 1, AD = false };
             End = new Date { Year = Year, Month = 12, Day = 31, AD = false };
         }
     }
 
-    public override string ToJson()
+    public override void ToJson()
     {
-        return JsonSerializer.Serialize(this);
+        JsonFormat = JsonSerializer.Serialize(this);
+    }
+    public override void FromJson()
+    {
+        var temp = JsonSerializer.Deserialize<GregorianCalendar>(JsonFormat)!;
+        Year = temp.Year;
+        Month = temp.Month;
+        Day = temp.Day;
+        AD = temp.AD;
     }
 
     public override string ToString()

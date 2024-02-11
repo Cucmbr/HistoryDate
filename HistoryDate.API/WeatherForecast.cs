@@ -1,4 +1,4 @@
-namespace HistoryDate.API
+namespace HistoryDateLib.API
 {
     public class WeatherForecast
     {

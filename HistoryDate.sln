@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDate.API", "HistoryDate.API\HistoryDate.API.csproj", "{0F7EFE85-BDB5-4F1E-8C44-BEED5D790B81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDateLib.API", "HistoryDate.API\HistoryDateLib.API.csproj", "{0F7EFE85-BDB5-4F1E-8C44-BEED5D790B81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDate.Domain", "HistoryDate.Domain\HistoryDate.Domain.csproj", "{3F3FA7D8-3557-4218-87F0-588114D07E89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDateLib.Domain", "HistoryDate.Domain\HistoryDateLib.Domain.csproj", "{3F3FA7D8-3557-4218-87F0-588114D07E89}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDate.Infrastructure", "HistoryDate.Infrastructure\HistoryDate.Infrastructure.csproj", "{F36C0711-B926-4DD3-AD5C-039AB75FCBD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDateLib.Infrastructure", "HistoryDate.Infrastructure\HistoryDateLib.Infrastructure.csproj", "{F36C0711-B926-4DD3-AD5C-039AB75FCBD9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDate.Tests", "HistoryDate.Tests\HistoryDate.Tests.csproj", "{93AC581F-ACA1-4971-803C-32E12FFD7D1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryDateLib.Tests", "HistoryDate.Tests\HistoryDateLib.Tests.csproj", "{93AC581F-ACA1-4971-803C-32E12FFD7D1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConsoleTest", "TempConsoleTest\TempConsoleTest.csproj", "{80798D94-906C-449F-A1C6-8E8CEA4FCE07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TempConsoleTest", "TempConsoleTest\TempConsoleTest.csproj", "{80798D94-906C-449F-A1C6-8E8CEA4FCE07}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3F3FA7D8-3557-4218-87F0-588114D07E89} = {3F3FA7D8-3557-4218-87F0-588114D07E89}
 	EndProjectSection

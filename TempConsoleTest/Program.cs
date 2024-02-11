@@ -1,4 +1,5 @@
-﻿using HistoryDate.Domain.Model;
+﻿using HistoryDateLib.Domain.Model;
+using System.Text.Json;
 
 //int tempCentury = 101;
 //Century[] test = { new Century(tempCentury), new Century(tempCentury, CenturyPart.LastHalf), new Century(tempCentury, CenturyPart.NotDefined), new Century(tempCentury, CenturyPart.SixthDecade), new Century(tempCentury, CenturyPart.FirstQuarter), new Century(tempCentury, CenturyPart.FirstThird), new Century(tempCentury, CenturyPart.SecondThird), new Century(tempCentury, CenturyPart.LastThird) };
@@ -14,5 +15,8 @@
 var greg = new GregorianCalendar(2004, 04, 17);
 var cent = new Century(21, CenturyPart.FirstQuarter);
 
-Console.WriteLine(greg.ToJson());
-Console.WriteLine(cent.ToJson());
+greg.ToJson();
+cent.ToJson();
+
+Console.WriteLine(greg.JsonFormat);
+Console.WriteLine(nameof(greg));

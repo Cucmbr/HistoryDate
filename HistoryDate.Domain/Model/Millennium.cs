@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace HistoryDate.Domain.Model;
+namespace HistoryDateLib.Domain.Model;
 
 // возможно, нужен енум для разных частей тысячелетия
 
@@ -23,13 +23,17 @@ public class Millennium : HistoryDate, IAnnoDomini
     {
         if (Value != 0)
         {
-            Begin = new Date() { Year = Value * 1000 - 999, Month = 1, Day = 1, AD = AD };
+            Begining = new Date() { Year = Value * 1000 - 999, Month = 1, Day = 1, AD = AD };
             End = new Date() { Year = Value * 1000, Month = 12, Day = 31, AD = AD };
         } // скорее всего не работает с датами до нашей эры!
     }
 
-    public override string ToJson()
+    public override void ToJson()
     {
-        return JsonSerializer.Serialize(this);
+        JsonFormat = JsonSerializer.Serialize(this);
+    }
+    public override void FromJson()
+    {
+        throw new NotImplementedException();
     }
 }

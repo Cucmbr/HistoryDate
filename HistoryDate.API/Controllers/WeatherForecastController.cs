@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace HistoryDate.API.Controllers
+namespace HistoryDateLib.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
