@@ -1,8 +1,6 @@
 ﻿using HistoryDateLib.Domain.Model;
 using HistoryDateLib.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client.Extensibility;
-using System.IO.Pipes;
 
 namespace HistoryDateLib.Infrastructure.Repository;
 
