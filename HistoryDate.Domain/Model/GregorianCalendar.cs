@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace HistoryDate.Domain.Model;
 
@@ -8,15 +9,6 @@ public class GregorianCalendar : HistoryDate, IAnnoDomini
     public int Month { get; set; }
     public int Day { get; set; }
     public bool AD { get; set; } = true;
-    
-    [JsonConstructor]    
-    public GregorianCalendar(Date begin, Date end) 
-    {
-        Begin = begin;
-        End = end;
-
-        InverseInterval();
-    }
 
     public GregorianCalendar(long year, int month, int day, bool AD = true)
     {
@@ -120,18 +112,9 @@ public class GregorianCalendar : HistoryDate, IAnnoDomini
         }
     }
 
-    private void InverseInterval()
+    public override string ToJson()
     {
-        Year = Begin.Year;
-        if (Begin.Month == End.Month && Begin.Day == End.Day)
-        {
-            Month = Begin.Month;
-            Day = Begin.Day;
-        }
-        else if (Begin.Month == End.Month)
-        {
-            Month = Begin.Month;
-        }
+        return JsonSerializer.Serialize(this);
     }
 
     public override string ToString()

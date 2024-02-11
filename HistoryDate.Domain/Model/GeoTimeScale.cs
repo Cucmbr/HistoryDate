@@ -1,4 +1,6 @@
-﻿namespace HistoryDate.Domain.Model;
+﻿using System.Text.Json;
+
+namespace HistoryDate.Domain.Model;
 
 public enum Eon
 {
@@ -75,5 +77,10 @@ public class GeoTimeScale : HistoryDate
     public override void CalcInterval()
     {
         throw new NotImplementedException();
+    }
+
+    public override string ToJson()
+    {
+        return JsonSerializer.Serialize(this);
     }
 }

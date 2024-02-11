@@ -1,4 +1,6 @@
-﻿namespace HistoryDate.Domain.Model;
+﻿using System.Text.Json;
+
+namespace HistoryDate.Domain.Model;
 
 public enum CenturyPart
 {
@@ -63,7 +65,10 @@ public class Century : HistoryDate, IAnnoDomini
         }
     }
 
-
+    public override string ToJson()
+    {
+        return JsonSerializer.Serialize(this);
+    }
 
     public override void CalcInterval()
     {
