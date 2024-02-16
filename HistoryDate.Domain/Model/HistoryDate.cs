@@ -11,7 +11,7 @@ public enum DateApproximation
     NotDefined
 }
 
-public abstract class HistoryDate
+public class HistoryDate
 {
     [JsonIgnore]
     public Guid Id { get; set; }
@@ -43,7 +43,7 @@ public abstract class HistoryDate
         }
     }
 
-    public abstract void CalcInterval();
-    public abstract void ToJson();
-    public abstract void FromJson();
+    public virtual void CalcInterval() { }
+    public virtual void ToJson() { }
+    public virtual void FromJson() { }
 }
