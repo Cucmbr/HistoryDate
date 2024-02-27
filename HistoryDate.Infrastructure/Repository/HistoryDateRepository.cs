@@ -20,7 +20,7 @@ public class HistoryDateRepository
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public async Task<HistoryDate> GetByIdAsync(Guid id)
+    public async Task<HistoryDate> GetByIdAsync(int id)
     {
         return await _context.HistoryDates.Where(p => p.Id == id).FirstOrDefaultAsync();
     }

@@ -11,4 +11,9 @@ public class Context : DbContext
     {
         optionsBuilder.UseSqlite("Data Source=HistoryBewnis.db");
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<HistoryDate>().HasMany(h => h.Dates).WithOne(d => d.HistoryDate).HasForeignKey(d => d.HistoryDateId);
+    }
 }

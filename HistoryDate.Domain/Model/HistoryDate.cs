@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace HistoryDateLib.Domain.Model;
@@ -14,13 +15,16 @@ public enum DateApproximation
 public class HistoryDate
 {
     [JsonIgnore]
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
+    [NotMapped]
     [JsonIgnore]
-    public Date Begining { get; set; } = null!;
+    public Date Begining { get { return Dates[0]; } set { Dates[0] = value; } }
 
+    [NotMapped]
     [JsonIgnore]
-    public Date End { get; set; } = null!;
+    public Date End { get { return Dates[1]; } set { Dates[1] = value; } }
+
 
     [JsonIgnore]
     public DateApproximation DateApproximation { get; set; } = DateApproximation.NotDefined;
@@ -30,18 +34,17 @@ public class HistoryDate
      
     [JsonIgnore]
     public string JsonFormat { get; set; } = string.Empty;
+    public List<Date> Dates;
 
     public HistoryDate() 
     {
-        Id = Guid.NewGuid();
-        Begining = new Date(Id);
-        End = new Date(Id);
+        Dates = [new() { HistoryDate = this }, new() { HistoryDate = this }];
     }
 
     public HistoryDate(string json)
     {
-        Begining = new Date(Id);
-        End = new Date(Id);
+        Begining = new() { HistoryDate = this };
+        End = new() { HistoryDate = this };
         JsonFormat = json;
 
         if (JsonFormat != string.Empty)
