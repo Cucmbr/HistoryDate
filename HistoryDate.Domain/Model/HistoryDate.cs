@@ -33,7 +33,15 @@ public class HistoryDate
      
     [JsonIgnore]
     public string JsonFormat { get; set; } = string.Empty;
+
+    [JsonIgnore]
     public List<Date> Dates;
+
+    [JsonIgnore]
+    public int HistorySpanId {  get; set; }
+
+    [JsonIgnore]
+    public HistorySpan HistorySpan {  get; set; }
 
     public HistoryDate() 
     {
@@ -42,8 +50,7 @@ public class HistoryDate
 
     public HistoryDate(string json)
     {
-        Begining = new() { HistoryDate = this };
-        End = new() { HistoryDate = this };
+        Dates = [new() { HistoryDate = this }, new() { HistoryDate = this }];
         JsonFormat = json;
 
         if (JsonFormat != string.Empty)
