@@ -75,8 +75,15 @@ public class Century : HistoryDate, IAnnoDomini
         }
 
         int[] mn = MNCalculator();
-        Begining = new Date { Year = centuryUtility + (100 * mn[0] / mn[1]), Month = 1, Day = 1, AD = AD };
-        End = new Date { Year = (centuryUtility  + (100 * (mn[0] + 1)) / mn[1] ) - 1, Month = 12, Day = 31, AD = AD };
+        Begining.Year = centuryUtility + (100 * mn[0] / mn[1]); 
+        Begining.Month = 1; 
+        Begining.Day = 1; 
+        Begining.AD = AD;
+
+        End.Year = centuryUtility + (100 * (mn[0] + 1)) / mn[1] - 1; 
+        End.Month = 12; 
+        End.Day = 31; 
+        End.AD = AD;
     }
 
     public override void ToJson()

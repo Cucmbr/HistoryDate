@@ -23,9 +23,9 @@ public class Millennium : HistoryDate, IAnnoDomini
     {
         if (Value != 0)
         {
-            Begining = new Date() { Year = Value * 1000 - 999, Month = 1, Day = 1, AD = AD };
-            End = new Date() { Year = Value * 1000, Month = 12, Day = 31, AD = AD };
-        } // скорее всего не работает с датами до нашей эры!
+            //Begining = new Date() { Year = Value * 1000 - 999, Month = 1, Day = 1, AD = AD };
+            //End = new Date() { Year = Value * 1000, Month = 12, Day = 31, AD = AD }; нужно переделать под новый формат задания свойств
+        } // скорее всего не работает с датами до нашей эры
     }
 
     public override void ToJson()

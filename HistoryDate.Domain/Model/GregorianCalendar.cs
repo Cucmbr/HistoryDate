@@ -90,25 +90,53 @@ public class GregorianCalendar : HistoryDate, IAnnoDomini
         {
             if (Day != 0 && Month != 0)
             {
-                Begining = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
-                End = new Date { Year = Year, Month = Month, Day = Day, AD = AD };
+                Begining.Year = Year;
+                Begining.Month = Month;
+                Begining.Day = Day;
+                Begining.AD = AD;
+
+                End.Year = Year;
+                End.Month = Month;
+                End.Day = Day;
+                End.AD = AD;
             }
             else if (Month != 0)
             {
-                Begining = new Date { Year = Year, Month = Month, Day = 1, AD = AD };
-                End = new Date { Year = Year, Month = Month, Day = DateTime.DaysInMonth((int)Year, Month), AD = AD };
+                Begining.Year = Year;
+                Begining.Month = Month;
+                Begining.Day = 1;
+                Begining.AD = AD;
+
+                End.Year = Year;
+                End.Month = Month;
+                End.Day = DateTime.DaysInMonth((int)Year, Month);
+                End.AD = AD;
             }
             else
             {
-                Begining = new Date { Year = Year, Month = 1, Day = 1, AD = AD };
-                End = new Date { Year = Year, Month = 12, Day = 31, AD = AD };
+                Begining.Year = Year;
+                Begining.Month = 1;
+                Begining.Day = 1;
+                Begining.AD = AD;
+
+                End.Year = Year;
+                End.Month = 12;
+                End.Day = 31;
+                End.AD = AD;
             }
 
         }
         else
         {
-            Begining = new Date { Year = Year, Month = 1, Day = 1, AD = false };
-            End = new Date { Year = Year, Month = 12, Day = 31, AD = false };
+            Begining.Year = Year;
+            Begining.Month = 1;
+            Begining.Day = 1;
+            Begining.AD = AD;
+
+            End.Year = Year;
+            End.Month = 12;
+            End.Day = 31;
+            End.AD = AD;
         }
     }
 

@@ -31,10 +31,17 @@ public class HistoryDate
     [JsonIgnore]
     public string JsonFormat { get; set; } = string.Empty;
 
-    public HistoryDate() { }
+    public HistoryDate() 
+    {
+        Id = Guid.NewGuid();
+        Begining = new Date(Id);
+        End = new Date(Id);
+    }
 
     public HistoryDate(string json)
     {
+        Begining = new Date(Id);
+        End = new Date(Id);
         JsonFormat = json;
 
         if (JsonFormat != string.Empty)
