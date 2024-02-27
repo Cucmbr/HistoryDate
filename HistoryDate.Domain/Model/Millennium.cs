@@ -2,7 +2,6 @@
 
 namespace HistoryDateLib.Domain.Model;
 
-// возможно, нужен енум для разных частей тысячелетия
 public enum MillenniumPart
 {
     FirstHalf = 2,
