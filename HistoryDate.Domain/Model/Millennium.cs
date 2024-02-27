@@ -12,8 +12,6 @@ public enum MillenniumPart
     NotDefined = 1,
 }
 
-
-
 public class Millennium : HistoryDate, IAnnoDomini
 {
     public int Value { get; set; }

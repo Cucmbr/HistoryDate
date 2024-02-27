@@ -25,13 +25,13 @@ public class HistoryDateRepository
         return await _context.HistoryDates.Where(p => p.Id == id).FirstOrDefaultAsync();
     }
 
-    public async Task AddAsync(HistoryDate date)
+    public async Task AddAsync(HistorySpan date)
     {
-        _context.HistoryDates.Add(date);
+        _context.HistorySpans.Add(date);
         await _context.SaveChangesAsync();
     }
 
-    public async Task UpdateApproximationAsync(HistoryDate date)
+    public async Task UpdateApproximationAsync(HistorySpan date)
     {
         var existingDate = await GetByIdAsync(date.Id);
         if (existingDate != null)
@@ -42,7 +42,7 @@ public class HistoryDateRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         var temp = await _context.HistoryDates.FindAsync(id);
         _context.HistoryDates.Remove(temp);

@@ -12,7 +12,4 @@ var repos = new HistoryDateRepository(context);
 context.Database.EnsureDeleted();
 context.Database.EnsureCreated();
 
-await repos.AddAsync(greg);
-await repos.AddAsync(greg2);
-await repos.AddAsync(greg3);
-await repos.AddAsync(greg4);
+await repos.AddAsync(new HistorySpan(greg2, greg));
